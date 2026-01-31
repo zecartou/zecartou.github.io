@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modulr – zecartou</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050816;
+      --accent: #4f46e5;
+      --accent2: #06b6d4;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2937;
+      --radius: 18px;
+      --transition: 200ms ease-out;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+      width: 100%;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: conic-gradient(from 180deg, #4f46e5, #22c55e, #06b6d4, #f97316, #4f46e5);
+      padding: 2px;
+    }
+
+    .logo-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: lowercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .nav-link {
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      border: 1px solid transparent;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, #111827 0, #020617 55%);
+      border-radius: 26px;
+      padding: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+      margin-bottom: 32px;
+    }
+
+    .hero-title {
+      font-size: clamp(28px, 3vw, 34px);
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 18px;
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .module-card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 18px;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 16px;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .module-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(148, 163, 184, 0.7);
+    }
+
+    .module-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .module-desc {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .module-tag {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(79, 70, 229, 0.15);
+      border: 1px solid rgba(79, 70, 229, 0.4);
+      font-size: 11px;
+      color: #a5b4fc;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 16px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header>
+      <div class="logo">
+        <div class="logo-mark">
+          <div class="logo-inner">z</div>
+        </div>
+        <span style="font-size: 18px; font-weight: 600; text-transform: lowercase;">zecartou</span>
+      </div>
+
+      <nav>
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="https://github.com/zecartou" target="_blank">GitHub</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1 class="hero-title">
+        Modulr — your <span>Roblox module hub</span>
+      </h1>
+      <p class="hero-subtitle">
+        All modules created by zecartou, organized in one clean place.  
+        Optimized, reusable and ready for high‑level systems.
+      </p>
+    </section>
+
+    <section>
+      <div class="module-grid">
+
+        <div class="module-card">
+          <div class="module-name">AdvancedMovement</div>
+          <div class="module-desc">Dynamic parkour system (run, slide, vault) with smooth transitions.</div>
+          <span class="module-tag">v1.0</span>
+        </div>
+
+        <div class="module-card">
+          <div class="module-name">HorrorCore</div>
+          <div class="module-desc">Core framework for horror games: events, AI, ambience.</div>
+          <span class="module-tag">beta</span>
+        </div>
+
+        <div class="module-card">
+          <div class="module-name">UIFlow</div>
+          <div class="module-desc">Clean UI animations with configurable easing and timing.</div>
+          <span class="module-tag">v0.9</span>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    © <span id="year"></span> zecartou — Modulr.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
